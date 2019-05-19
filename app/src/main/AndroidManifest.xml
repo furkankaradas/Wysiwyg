@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EmployeeProfil"></activity>
+        <activity android:name=".CompanyProfile"></activity>
+        <activity android:name=".EmployeeProfil" />
         <activity android:name=".AddJob" />
         <activity android:name=".JobList" />
         <activity android:name=".MainActivity">

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Intent intent = new Intent(this, JobList.class);
         //startActivity(intent);
-        Intent intent = new Intent(this, EmployeeProfil.class);
+        Intent intent = new Intent(this, CompanyProfile.class);
         startActivity(intent);
     }
 

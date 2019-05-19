@@ -34,11 +34,11 @@ public class EmployeeProfil extends AppCompatActivity {
 
         img = findViewById(R.id.imageField);
         img.setImageResource(R.drawable.avatar);
-        TextView nameField = findViewById(R.id.nameField);
+        TextView nameField = findViewById(R.id.CnameField);
         TextView surnameField = findViewById(R.id.surnameField);
-        TextView emailField = findViewById(R.id.emailField);
-        TextView idField = findViewById(R.id.idField);
-        TextView birthField = findViewById(R.id.BirthDateField);
+        TextView emailField = findViewById(R.id.CemailField);
+        TextView idField = findViewById(R.id.CtaxField);
+        TextView birthField = findViewById(R.id.CAddressField);
         TextView drivingField = findViewById(R.id.dlField);
         TextView bloodField = findViewById(R.id.bloodGroupField);
         TextView phoneField = findViewById(R.id.phoneField);
@@ -86,7 +86,6 @@ public class EmployeeProfil extends AppCompatActivity {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Employee");
         query.whereEqualTo("objectId", userObjectID);
         List<ParseObject> parseObjects = query.find();
-        boolean status;
         if (parseObjects.size() == 0)
             return null;
         else {
