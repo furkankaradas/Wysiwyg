@@ -1,8 +1,11 @@
 package com.back4app.quickstartexampleapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,27 +20,27 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 
-public class AddJob extends AppCompatActivity {
-
-
+public class CompanyAddJob extends Fragment {
+    private View view;
     private SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy hh:mm");
     private JSONArray requirements = new JSONArray();
     private ParseObject entity = new ParseObject("Job");
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_job);
 
-        final TextView jobType = findViewById(R.id.JobType);
-        final TextView jobDefinition = findViewById(R.id.JobDefinition);
-        final TextView price = findViewById(R.id.Price);
-        final TextView entryDate = findViewById(R.id.EntryDate);
-        final TextView entryTime = findViewById(R.id.EntryTime);
-        final TextView finishDate = findViewById(R.id.FinishDate);
-        final TextView finishTime = findViewById(R.id.FinishTime);
-        final TextView req = findViewById(R.id.Requirements);
-        Button addJobButton = findViewById(R.id.addJobButton);
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_company_add_job, null);
+
+        final TextView jobType = view.findViewById(R.id.JobType);
+        final TextView jobDefinition = view.findViewById(R.id.JobDefinition);
+        final TextView price = view.findViewById(R.id.Price);
+        final TextView entryDate = view.findViewById(R.id.EntryDate);
+        final TextView entryTime = view.findViewById(R.id.EntryTime);
+        final TextView finishDate = view.findViewById(R.id.FinishDate);
+        final TextView finishTime = view.findViewById(R.id.FinishTime);
+        final TextView req = view.findViewById(R.id.Requirements);
+        Button addJobButton = view.findViewById(R.id.addJobButton);
 
         addJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +66,7 @@ public class AddJob extends AppCompatActivity {
             }
         });
 
+        return view;
     }
 
     private void importData(Job job) {
@@ -81,12 +85,14 @@ public class AddJob extends AppCompatActivity {
             public void done(ParseException e) {
                 // Here you can handle errors, if thrown. Otherwise, "e" should be null
                 if (e != null) {
-                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "Error", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "Saved", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
     }
+
 }
+

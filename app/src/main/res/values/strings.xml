@@ -7,5 +7,13 @@
     <string name="back4app_client_key">Siwejm9XJct6VkyTsIaeFmjIZ0twXHhZRpS2H2PB</string>
 
     <string name="app_name">Wysiwyg</string>
+    <string name="title_activity_company_screen">CompanyScreen</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_company_screen_profile">CompanyScreenProfile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

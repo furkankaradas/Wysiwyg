@@ -1,8 +1,8 @@
 package com.back4app.quickstartexampleapp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Intent intent = new Intent(this, JobList.class);
         //startActivity(intent);
-        Intent intent = new Intent(this, CompanyProfile.class);
+        Intent intent = new Intent(this, CompanyScreen.class);
         startActivity(intent);
     }
 
