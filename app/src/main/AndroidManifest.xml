@@ -11,8 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".EmployeeScreen"
+            android:label="@string/title_activity_employee_screen"></activity>
+        <activity
             android:name=".CompanyScreen"
-            android:label="@string/title_activity_company_screen"></activity>
+            android:label="@string/title_activity_company_screen" />
         <activity android:name=".CompanyProfile" />
         <activity android:name=".EmployeeProfil" />
         <activity android:name=".AddJob" />
