@@ -1,5 +1,7 @@
 package com.back4app.quickstartexampleapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,13 +27,17 @@ public class CompanyAddJob extends Fragment {
     private SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy hh:mm");
     private JSONArray requirements = new JSONArray();
     private ParseObject entity = new ParseObject("Job");
-    private String companyObjectID = "yex8kVP2jj";
+    private String companyObjectID = "";
+    SharedPreferences prf;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_company_add_job, null);
+
+        prf = getActivity().getApplicationContext().getSharedPreferences("sessionID", Context.MODE_PRIVATE);
+        companyObjectID = prf.getString("objectID", null);
 
         final TextView jobType = view.findViewById(R.id.JobType);
         final TextView jobDefinition = view.findViewById(R.id.JobDefinition);
@@ -42,6 +48,7 @@ public class CompanyAddJob extends Fragment {
         final TextView finishTime = view.findViewById(R.id.FinishTime);
         final TextView req = view.findViewById(R.id.Requirements);
         Button addJobButton = view.findViewById(R.id.addJobButton);
+
 
         addJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +86,7 @@ public class CompanyAddJob extends Fragment {
         entity.put("entryDate", job.getEntryDate());
         entity.put("finishDate", job.getFinishDate());
         entity.put("requirements", job.getRequirements());
-        entity.put("companyID", companyObjectID);
+        entity.put("username", companyObjectID);
 
         // Saved Check
         entity.saveInBackground(new SaveCallback() {

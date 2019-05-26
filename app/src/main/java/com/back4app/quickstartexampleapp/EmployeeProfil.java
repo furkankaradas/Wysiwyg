@@ -93,7 +93,7 @@ public class EmployeeProfil extends AppCompatActivity {
                 user.setFirstName(object.getString("name"));
                 user.setLastName(object.getString("surname"));
                 user.seteMail(object.getString("email"));
-                user.setBirth(object.getDate("birthDate"));
+                user.setBirth(object.getString("birthDate"));
                 user.setTurkishIdentifier(object.getString("idNumber"));
                 user.setPhoneNumber(object.getString("phone"));
                 user.setBloodType(object.getString("bloodType"));

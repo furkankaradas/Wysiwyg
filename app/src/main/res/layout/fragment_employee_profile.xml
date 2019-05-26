@@ -142,16 +142,6 @@
             android:layout_marginTop="20dp"
             android:text="Work Hours:" />
 
-        <TextView
-            android:id="@+id/workField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/workHour"
-
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Work Field:" />
-
 
         <TextView
             android:id="@+id/dlField"

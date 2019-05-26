@@ -8,6 +8,8 @@ public class Company {
     private String email;
     private String taxID;
     private int score;
+    private String username;
+    private String password;
 
     public Company() {
         this.name = "";
@@ -16,15 +18,20 @@ public class Company {
         this.email = "";
         this.taxID = "";
         this.score = 0;
+        this.password="";
+        this.username="";
     }
 
-    public Company(String name, String address, String phoneNumber, String email, String taxID, int score) {
+    public Company(String name, String address, String phoneNumber,
+                   String email, String taxID, int score, String username, String password) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.taxID = taxID;
         this.score = score;
+        this.username = username;
+        this.password = password;
     }
 
     public String getName() {
@@ -73,6 +80,22 @@ public class Company {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

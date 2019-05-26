@@ -10,9 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Register"></activity>
+        <activity android:name=".AddEmployeeInfo"></activity>
+        <activity android:name=".AddCompanyInfo" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EmployeeScreen"
-            android:label="@string/title_activity_employee_screen"></activity>
+            android:label="@string/title_activity_employee_screen" />
         <activity
             android:name=".CompanyScreen"
             android:label="@string/title_activity_company_screen" />

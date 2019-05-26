@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+
+        /*
         employeeButton = findViewById(R.id.ebut);
         employeeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        */
     }
 
 }

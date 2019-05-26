@@ -1,6 +1,8 @@
 package com.back4app.quickstartexampleapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -31,6 +33,7 @@ public class HomeFragment extends Fragment {
     private ArrayList<Job> jobListData = new ArrayList<>();
     private SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy hh:mm");
     private String companyObjectID = "yex8kVP2jj";
+    SharedPreferences prf;
 
     @Nullable
     @Override
@@ -38,7 +41,8 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, null);
 
         ListView jobList = view.findViewById(R.id.CompanyListView);
-
+        prf = getActivity().getApplicationContext().getSharedPreferences("sessionID", Context.MODE_PRIVATE);
+        companyObjectID = prf.getString("objectID", null);
         try {
             exportOtherData();
         } catch (java.text.ParseException e) {
@@ -78,7 +82,7 @@ public class HomeFragment extends Fragment {
     private void exportOtherData() throws java.text.ParseException {
         // Export Data from database
         try {
-            query.whereEqualTo("companyID", companyObjectID);
+            query.whereEqualTo("username", companyObjectID);
             jobListItems = query.find();
         }
         catch (ParseException e) {
