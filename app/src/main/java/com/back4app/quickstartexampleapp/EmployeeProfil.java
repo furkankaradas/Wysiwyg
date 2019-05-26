@@ -50,7 +50,7 @@ public class EmployeeProfil extends AppCompatActivity {
         idField.setText("ID: " + userInfo.getTurkishIdentifier());
         birthField.setText("Birth Date: " + ft.format(userInfo.getBirth()));
         drivingField.setText("Driving License: " + userInfo.getDrivingLicense());
-        bloodField.setText("Blood Type: " + userInfo.getGender());
+        bloodField.setText("Blood Type: " + userInfo.getBloodType());
         phoneField.setText("Phone: " + userInfo.getPhoneNumber());
         genderField.setText("Gender: " + userInfo.getGender());
 
