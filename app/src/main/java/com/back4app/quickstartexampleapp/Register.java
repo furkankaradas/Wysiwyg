@@ -18,6 +18,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        ParseUser.getCurrentUser().logOut();
 
         final EditText _username = findViewById(R.id.editTextUsername);
         final EditText _email = findViewById(R.id.editTextEmail);
@@ -37,7 +38,7 @@ public class Register extends AppCompatActivity {
                 newUSer.setUsername(String.valueOf(_username.getText()));
                 newUSer.setPassword(String.valueOf(_password.getText()));
                 user.setEmail(newUSer.getEmail());
-                user.setPassword(newUSer.getEmail());
+                user.setPassword(newUSer.getPassword());
                 user.setUsername(newUSer.getUsername());
                 user.put("isCompany", true);
                 user.signUpInBackground();
@@ -58,7 +59,7 @@ public class Register extends AppCompatActivity {
                 newUSer2.setUsername(String.valueOf(_username.getText()));
                 newUSer2.setPassword(String.valueOf(_password.getText()));
                 user.setEmail(newUSer2.getEmail());
-                user.setPassword(newUSer2.getEmail());
+                user.setPassword(newUSer2.getPassword());
                 user.setUsername(newUSer2.getUsername());
                 user.put("isCompany", false);
                 user.signUpInBackground();

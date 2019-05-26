@@ -12,8 +12,12 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.SaveCallback;
 
+import java.text.SimpleDateFormat;
+
 
 public class AddEmployeeInfo extends AppCompatActivity {
+
+    private SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy hh:mm");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +52,7 @@ public class AddEmployeeInfo extends AppCompatActivity {
                 employee.setTurkishIdentifier(tc.getText().toString());
                 employee.setGender(gender.getText().toString());
                 employee.setWorkDate(workDate.getText().toString());
-                employee.setWorkHour(workHour.getText().toString());
+                employee.setWorkHour(workDate.getText().toString());
                 employee.setPhoneNumber(phoneNumber.getText().toString());
                 employee.seteMail(register_email);
                 employee.setUsername(register_username);
@@ -68,6 +72,13 @@ public class AddEmployeeInfo extends AppCompatActivity {
                 newEmployee.put("drivingLicense",employee.getDrivingLicense() );
                 newEmployee.put("workHour",employee.getWorkHour());
                 newEmployee.put("workDate",employee.getWorkDate());
+
+                String eDate = String.valueOf(workDate.getText()) + " " + String.valueOf(workHour.getText());
+                try {
+                    newEmployee.put("wDate", ft.parse(eDate));
+                } catch (java.text.ParseException e) {
+                    e.printStackTrace();
+                }
                 newEmployee.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
@@ -80,7 +91,6 @@ public class AddEmployeeInfo extends AppCompatActivity {
                         else
                         {
                             Toast.makeText(getApplicationContext(),"Error.",Toast.LENGTH_SHORT).show();
-
                         }
                     }
                 });

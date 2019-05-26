@@ -11,6 +11,7 @@ public class Job {
     private Date entryDate;
     private Date finishDate;
     private JSONArray requirements;
+    private String objectID;
 
     public Job() {
         jobType = "";
@@ -19,15 +20,17 @@ public class Job {
         entryDate = new Date();
         finishDate = new Date();
         requirements = new JSONArray();
+        objectID = "";
     }
 
-    public Job(String jobType, String jobDefinition, int feeInfo, Date entryDate, Date finishDate, JSONArray requirements) {
+    public Job(String jobType, String jobDefinition, int feeInfo, Date entryDate, Date finishDate, JSONArray requirements, String objectID) {
         this.jobType = jobType;
         this.jobDefinition = jobDefinition;
         this.feeInfo = feeInfo;
         this.entryDate = entryDate;
         this.finishDate = finishDate;
         this.requirements = requirements;
+        this.objectID = objectID;
     }
 
     public String getJobType() {
@@ -76,6 +79,14 @@ public class Job {
 
     public void setRequirements(JSONArray requirements) {
         this.requirements = requirements;
+    }
+
+    public String getObjectID() {
+        return objectID;
+    }
+
+    public void setObjectID(String objectID) {
+        this.objectID = objectID;
     }
 
     @Override

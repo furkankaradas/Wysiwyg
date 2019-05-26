@@ -90,7 +90,7 @@ public class JobList extends AppCompatActivity {
         Job j;
         for (ParseObject p : jobListItems) {
             j = new Job(p.getString("jobType"), p.getString("JobDefinition"), p.getInt("feeInfo"),
-                    p.getDate("entryDate"), p.getDate("finishDate"), p.getJSONArray("requirements"));
+                    p.getDate("entryDate"), p.getDate("finishDate"), p.getJSONArray("requirements"), p.getObjectId());
             jobListData.add(j);
         }
     }

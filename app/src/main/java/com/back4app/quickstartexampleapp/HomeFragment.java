@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
     private ArrayAdapter arrayAdapter;
     private ArrayList<Job> jobListData = new ArrayList<>();
     private SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy hh:mm");
-    private String companyObjectID = "yex8kVP2jj";
+    private String companyObjectID = "";
     SharedPreferences prf;
 
     @Nullable
@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment {
         Job j;
         for (ParseObject p : jobListItems) {
             j = new Job(p.getString("jobType"), p.getString("JobDefinition"), p.getInt("feeInfo"),
-                    p.getDate("entryDate"), p.getDate("finishDate"), p.getJSONArray("requirements"));
+                    p.getDate("entryDate"), p.getDate("finishDate"), p.getJSONArray("requirements"), p.getObjectId());
             jobListData.add(j);
         }
     }
