@@ -25,6 +25,7 @@ public class CompanyAddJob extends Fragment {
     private SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy hh:mm");
     private JSONArray requirements = new JSONArray();
     private ParseObject entity = new ParseObject("Job");
+    private String companyObjectID = "yex8kVP2jj";
 
 
     @Nullable
@@ -78,6 +79,7 @@ public class CompanyAddJob extends Fragment {
         entity.put("entryDate", job.getEntryDate());
         entity.put("finishDate", job.getFinishDate());
         entity.put("requirements", job.getRequirements());
+        entity.put("companyID", companyObjectID);
 
         // Saved Check
         entity.saveInBackground(new SaveCallback() {
